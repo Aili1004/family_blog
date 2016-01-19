@@ -15,11 +15,13 @@ gem 'pry-rails'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
   gem 'spring-commands-rspec'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'guard-rails', require: false
 end
