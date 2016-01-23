@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @family_member.first_name %>
+  <%= image_tag @family_member.image, class: "detailed-profile" %>
 </p>
 
 <p>
-  <strong>Middle name:</strong>
-  <%= @family_member.middle_name %>
+  <strong>First name:</strong>
+  <%= @family_member.first_name %>
 </p>
 
 <p>
@@ -26,11 +25,6 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @family_member.image %>
-</p>
-
-<p>
   <strong>Occupation:</strong>
   <%= @family_member.occupation %>
 </p>
@@ -46,4 +40,5 @@
 </p>
 
 <%= link_to 'Edit', edit_family_member_path(@family_member) %> |
+<%= link_to 'Destroy', @family_member, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', family_members_path %>
