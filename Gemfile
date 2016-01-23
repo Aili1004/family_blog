@@ -13,6 +13,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'bourbon'
 gem 'neat'
+gem 'haml-rails'
+gem 'html2haml'
 
 group :development, :test do
   gem 'byebug'

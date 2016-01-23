@@ -14,7 +14,6 @@ legend {
 label {
   display: block;
   font-weight: 600;
-  margin-bottom: $small-spacing / 2;
 }
 
 input,
@@ -22,6 +21,7 @@ select {
   display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  margin: 0 auto;
 }
 
 #{$all-text-inputs},
@@ -36,7 +36,7 @@ select[multiple] {
   margin-bottom: $small-spacing;
   padding: $base-spacing / 3;
   transition: border-color $base-duration $base-timing;
-  width: 100%;
+  width: 80%;
 
   &:hover {
     border-color: shade($base-border-color, 20%);
@@ -81,4 +81,10 @@ select {
   margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
+}
+
+.form-div {
+  background-color: $light-gray;
+  width:50%;
+  margin:0 auto;
 }
