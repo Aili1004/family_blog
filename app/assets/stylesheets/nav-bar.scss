@@ -1,0 +1,10 @@
+nav {
+  margin-top: $small-spacing;
+  a {
+    padding: 0.75em 1em;
+  }
+  a:hover {
+    background-color: $light-pink;
+    border-radius: 5px;
+  }
+}
