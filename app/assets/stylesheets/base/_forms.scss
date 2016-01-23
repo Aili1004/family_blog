@@ -88,3 +88,9 @@ select {
   width:50%;
   margin:0 auto;
 }
+.new-family-member,
+.edit-family-member,
+.edit-photo,
+.new-photo {
+  margin-top: $base-spacing;
+}
