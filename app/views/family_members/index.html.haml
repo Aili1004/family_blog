@@ -1,0 +1,21 @@
+%p#notice= notice
+%table
+  %thead
+    %tr
+      %th
+      %th First name
+      %th Last name
+      %th Dob
+      %th Occupation
+      %th
+  %tbody
+    - @family_members.each do |family_member|
+      %tr
+        %td= image_tag family_member.image, class: "profile"
+        %td= family_member.first_name
+        %td= family_member.last_name
+        %td= family_member.dob
+        %td= family_member.occupation
+        %td= link_to 'View Details', family_member
+%br/
+= link_to 'New Family member', new_family_member_path

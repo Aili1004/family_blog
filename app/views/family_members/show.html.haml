@@ -1,0 +1,29 @@
+%p#notice= notice
+%p
+  = image_tag @family_member.image, class: "detailed-profile"
+%p
+  %strong First name:
+  = @family_member.first_name
+%p
+  %strong Last name:
+  = @family_member.last_name
+%p
+  %strong Dob:
+  = @family_member.dob
+%p
+  %strong Email:
+  = @family_member.email
+%p
+  %strong Occupation:
+  = @family_member.occupation
+%p
+  %strong Description:
+  = @family_member.description
+%p
+  %strong Phone number:
+  = @family_member.phone_number
+= link_to 'Edit', edit_family_member_path(@family_member)
+|
+= link_to 'Destroy', @family_member, method: :delete, data: { confirm: 'Are you sure?' }
+|
+= link_to 'Back', family_members_path

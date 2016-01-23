@@ -1,0 +1,36 @@
+.form-div
+  = form_for(@family_member) do |f|
+    - if @family_member.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@family_member.errors.count, "error")
+          prohibited this family_member from being saved:
+        %ul
+          - @family_member.errors.full_messages.each do |message|
+            %li= message
+    .field
+      = f.label :first_name
+      = f.text_field :first_name, :placeholder => "First Name"
+    .field
+      = f.label :last_name
+      = f.text_field :last_name, :placeholder => "Last Name"
+    .field
+      = f.label :dob
+      = f.date_field :dob, :placeholder => "Date of Birth"
+    .field
+      = f.label :email
+      = f.text_area :email, :placeholder => "Email"
+    .field
+      = f.label :image
+      = f.text_area :image, :placeholder => "Image URL"
+    .field
+      = f.label :occupation
+      = f.text_field :occupation, :placeholder => "Occupation"
+    .field
+      = f.label :description
+      = f.text_area :description, :placeholder => "Description"
+    .field
+      = f.label :phone_number
+      = f.text_field :phone_number, :placeholder => "Phone Number"
+    .actions
+      = f.submit
