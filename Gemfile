@@ -15,6 +15,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'haml-rails'
 gem 'html2haml'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug'
