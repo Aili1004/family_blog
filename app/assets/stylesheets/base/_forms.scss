@@ -4,6 +4,9 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+field:first-child {
+  margin-top: 2em;
+}
 
 legend {
   font-weight: 600;
@@ -12,13 +15,14 @@ legend {
 }
 
 label {
-  display: block;
+  display: inline-block;
   font-weight: 600;
+  width: $base-spacing * 5;
 }
 
 input,
 select {
-  display: block;
+  display: inline-block;
   font-family: $base-font-family;
   font-size: $base-font-size;
   margin: 0 auto;
@@ -36,7 +40,7 @@ select[multiple] {
   margin-bottom: $small-spacing;
   padding: $base-spacing / 3;
   transition: border-color $base-duration $base-timing;
-  width: 80%;
+  width: 50%;
 
   &:hover {
     border-color: shade($base-border-color, 20%);
@@ -85,12 +89,28 @@ select {
 
 .form-div {
   background-color: $light-gray;
-  width:50%;
-  margin:0 auto;
+  width: 50%;
+  margin: 0 auto;
+  label {
+    text-align: left;
+  }
+  .actions {
+    margin-top: $base-spacing * 2;
+
+  }
 }
 .new-family-member,
 .edit-family-member,
 .edit-photo,
 .new-photo {
   margin-top: $base-spacing;
+  h1 {
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    height: $base-spacing * 2;
+    margin: 0 auto;
+    line-height: $base-spacing * 2;
+    background-color: $dark-gray;
+  }
 }

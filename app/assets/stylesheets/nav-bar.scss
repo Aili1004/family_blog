@@ -1,10 +1,15 @@
 nav {
   margin-top: $small-spacing;
+  background-color: #bae2c0;
+  padding: $small-spacing;
   a {
-    padding: 0.75em 1em;
+    padding: $small-spacing $base-spacing;
+    font-weight: $font-weight;
+    color: white;
   }
   a:hover {
-    background-color: $light-pink;
-    border-radius: 5px;
+    color: white;
+    background-color: #5ebd6e;
+    border-radius: $border-radius;
   }
 }

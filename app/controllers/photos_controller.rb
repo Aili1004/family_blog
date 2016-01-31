@@ -24,7 +24,12 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(photo_params)
+    photo_details = photo_params
+    if params[:file]
+        response = Cloudinary::Uploader.upload params[:file]
+        photo_details["imgURL"] = response["url"]
+    end
+    @photo = Photo.new(photo_details)
 
     respond_to do |format|
       if @photo.save
@@ -40,8 +45,14 @@ class PhotosController < ApplicationController
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json
   def update
+    photo_details = photo_params
+    if params[:file]
+        response = Cloudinary::Uploader.upload params[:file]
+        photo_details["imgURL"] = response["url"]
+    end
+
     respond_to do |format|
-      if @photo.update(photo_params)
+      if @photo.update(photo_details)
         format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
         format.json { render :show, status: :ok, location: @photo }
       else
@@ -69,6 +80,6 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:imgURL)
+      params.permit(:imgURL)
     end
 end

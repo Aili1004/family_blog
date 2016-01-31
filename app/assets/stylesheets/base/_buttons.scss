@@ -1,4 +1,5 @@
-#{$all-buttons} {
+#{$all-buttons},
+.back {
   appearance: none;
   background-color: $action-color;
   border: 0;
@@ -9,7 +10,7 @@
   font-family: $base-font-family;
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
+  font-weight: $font-weight;
   line-height: 1;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
@@ -31,5 +32,32 @@
     &:hover {
       background-color: $action-color;
     }
+  }
+}
+
+.new {
+  position: absolute;
+  right: 10%;
+  top: $base-spacing * 3;
+  display: inline-block;
+  background-color: $new-btn-color;
+  padding: $small-spacing $base-spacing;
+  border-radius: $border-radius;
+  color: white;
+  font-weight: $font-weight;
+  &:hover {
+    background-color: $new-btn-hover-color;
+    color: white;
+  }
+}
+
+.normal-btn {
+  color: white;
+  background-color: $light-gray;
+  padding: $small-spacing/2 $base-spacing/2;
+  border-radius: $border-radius;
+  &:hover {
+    color: white;
+    background-color: $medium-gray;
   }
 }

@@ -24,7 +24,14 @@ class FamilyMembersController < ApplicationController
   # POST /family_members
   # POST /family_members.json
   def create
-    @family_member = FamilyMember.new(family_member_params)
+    family_member_details = family_member_params
+
+    if params[:file]
+      response = Cloudinary::Uploader.upload params[:file]
+      family_member_details["image"] = response["url"]
+    end
+
+    @family_member = FamilyMember.new(family_member_details)
 
     respond_to do |format|
       if @family_member.save
@@ -40,8 +47,15 @@ class FamilyMembersController < ApplicationController
   # PATCH/PUT /family_members/1
   # PATCH/PUT /family_members/1.json
   def update
+    family_member_details = family_member_params
+
+    if params[:file]
+      response = Cloudinary::Uploader.upload params[:file]
+      family_member_details["image"] = response["url"]
+    end
+
     respond_to do |format|
-      if @family_member.update(family_member_params)
+      if @family_member.update(family_member_details)
         format.html { redirect_to @family_member, notice: 'Family member was successfully updated.' }
         format.json { render :show, status: :ok, location: @family_member }
       else

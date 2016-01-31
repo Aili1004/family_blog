@@ -1,5 +1,5 @@
 .form-div
-  = form_for(@family_member) do |f|
+  = form_for @family_member, :html => { :multipart => true } do |f|
     - if @family_member.errors.any?
       #error_explanation
         %h2
@@ -19,18 +19,21 @@
       = f.date_field :dob, :placeholder => "Date of Birth"
     .field
       = f.label :email
-      = f.text_area :email, :placeholder => "Email"
+      = f.text_field :email, :placeholder => "Email"
     .field
       = f.label :image
-      = f.text_area :image, :placeholder => "Image URL"
+      .file-upload
+        = f.cl_image_upload :file
     .field
       = f.label :occupation
-      = f.text_field :occupation, :placeholder => "Occupation"
+      = f.text_field :occupation, :placeholder => "What do you do?"
     .field
       = f.label :description
-      = f.text_area :description, :placeholder => "Description"
+      = f.text_area :description, :placeholder => "Tell us about yourself"
     .field
       = f.label :phone_number
       = f.text_field :phone_number, :placeholder => "Phone Number"
     .actions
       = f.submit
+      = link_to 'Back', family_members_path, class: 'back'
+    %br
