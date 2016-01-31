@@ -1,29 +1,37 @@
 %p#notice= notice
 %p
   = image_tag @family_member.image, class: "detailed-profile"
-%p
-  %strong First name:
-  = @family_member.first_name
-%p
-  %strong Last name:
-  = @family_member.last_name
-%p
-  %strong Dob:
-  = @family_member.dob
-%p
-  %strong Email:
-  = @family_member.email
-%p
-  %strong Occupation:
-  = @family_member.occupation
-%p
-  %strong Description:
-  = @family_member.description
-%p
-  %strong Phone number:
-  = @family_member.phone_number
-= link_to 'Edit', edit_family_member_path(@family_member)
+
+%table.family-member-detail
+  %tr.title
+    %td Title
+    %td Info
+  %tr
+    %td.label First Name
+    %td= @family_member.first_name
+  %tr
+    %td.label Last Name
+    %td= @family_member.last_name
+  %tr
+    %td.label Date of Birth
+    %td= @family_member.dob
+  %tr
+    %td.label Email
+    %td= @family_member.email
+  %tr
+    %td.label occupation
+    %td= @family_member.occupation
+  %tr
+    %td.label Description
+    %td= @family_member.description
+  %tr
+    %td.label Phone Number
+    %td= @family_member.phone_number
+
+%br
+
+= link_to 'Edit', edit_family_member_path(@family_member), class: 'normal-btn'
 |
-= link_to 'Destroy', @family_member, method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'Destroy', @family_member, method: :delete, data: { confirm: 'Are you sure?' }, class: 'normal-btn'
 |
-= link_to 'Back', family_members_path
+= link_to 'Back', family_members_path, class: 'normal-btn'

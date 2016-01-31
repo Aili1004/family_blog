@@ -1,5 +1,5 @@
 .form-div
-  = form_for(@photo) do |f|
+  = form_for @photo, :html => { :multipart => true } do |f|
     - if @photo.errors.any?
       #error_explanation
         %h2
@@ -11,6 +11,9 @@
     .field
       = f.label :imgURL
       %br/
-      = f.text_area :imgURL
+      .file-upload
+        = f.cl_image_upload :file
     .actions
       = f.submit
+      = link_to 'Back', photos_path, class: 'back'
+    %br

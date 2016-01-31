@@ -4,6 +4,7 @@ $heading-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
+$font-weight: 600;
 
 // Line height
 $base-line-height: 1.5;
@@ -41,3 +42,13 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+$border-radius: 5px;
+
+// Buttons
+$new-btn-color: #88beb0;
+$new-btn-hover-color: #aaeedd;
+
+// Table rows
+$even-row-color: #e5f9f4;
+$odd-row-color: white;
